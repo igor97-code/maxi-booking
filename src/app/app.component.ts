@@ -21,9 +21,7 @@ export class AppComponent implements OnInit{
   }
   getCourses = ()=>{
       this.http.get(this.url[this.indexUrl]).subscribe(response =>{
-        console.log( this.url[this.indexUrl])
         this.currentCourse = response.Valute.EUR.Value
-        console.log( this.currentCourse);  
       },error =>{
           if(this.indexUrl < this.url.length +1){
             ++this.indexUrl
